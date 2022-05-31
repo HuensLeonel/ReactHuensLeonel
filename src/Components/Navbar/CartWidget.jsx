@@ -1,7 +1,11 @@
 import React from 'react'
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
-export default function CartWidget() {
+export default function CartWidget({items}) {
   return (
-    <div>CartWidgets</div>
+    <>
+      <ShoppingCartIcon/>
+      {items}
+    </>
   )
 }

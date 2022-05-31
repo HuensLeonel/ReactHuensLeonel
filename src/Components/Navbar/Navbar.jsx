@@ -1,3 +1,4 @@
+import CartWidget from './CartWidget';
 import './Navbar.css'
 
 function Navbar() {
@@ -39,7 +40,7 @@ function Navbar() {
             <a class="" href="#Accion">Bienvenida/o Usuario</a>
           </div>
           <div className="container-bar-inicio-carro">
-            
+            <CartWidget items={4}/>
           </div>
         </div>
       </div>
