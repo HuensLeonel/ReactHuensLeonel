@@ -1,0 +1,24 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container-form{
+    display: flex;
+    flex-direction: row;
+    background-color: #EEEEEE;
+    width: 83px;
+    height: 50px;
+    border-radius: 5px;
+}
+
+.container-count{
+    width: 60%;
+    margin: auto auto;
+    padding-left: 7px ;
+}
+
+.container-buttons{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+}
