@@ -1,10 +1,10 @@
 import CartWidget from './CartWidget';
-import './Navbar.css'
+import './Navbar.css';
 
 function Navbar() {
   return (
-    <div className='container'>
-      <div className='container-nav'>
+    <div className='contenedor'>
+      <div className='contenedor-nav'>
         <div className="">
           <a href="#Accion">
             <img src="https://www.venex.com.ar/images/trucklogo.png" alt="" />
@@ -24,28 +24,28 @@ function Navbar() {
           </a>       
         </div>
       </div>
-      <div className='container-bar'>
-        <div className="container-bar-logo">
+      <div className='contenedor-bar'>
+        <div className="contenedor-bar-logo">
           <a href="#Accion">
             <img src="https://www.venex.com.ar/fil/logo/header_logo_nuevo.png" alt="" />
           </a>      
         </div>
-        <div className="container-bar-form">
+        <div className="contenedor-bar-form">
           <form action="">
             <input title="" id="" placeholder='Eso que querés.. buscalo acá' autocomplete="off" class="form-control" data-original-title=""/>
           </form>
         </div>
-        <div className="container-bar-inicio">
-          <div className="container-bar-inicio-usu">
+        <div className="contenedor-bar-inicio">
+          <div className="contenedor-bar-inicio-usu">
             <a class="" href="#Accion">Bienvenida/o Usuario</a>
           </div>
-          <div className="container-bar-inicio-carro">
+          <div className="contenedor-bar-inicio-carro">
             <CartWidget items={4}/>
           </div>
         </div>
       </div>
-      <div className="container-menu">
-        <div className="container-menu-items">
+      <div className="contenedor-menu">
+        <div className="contenedor-menu-items">
           <ul>
             <li><a href="#accion">Categorias | </a></li>
             <li><a href="#accion">Pc de Escritorio </a></li>

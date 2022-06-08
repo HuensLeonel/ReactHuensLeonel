@@ -1,0 +1,27 @@
+.card{
+    height: 100%;
+    width: 100px;
+    border: 1px solid black;
+    transition: all 0.5s;
+}
+
+.card:hover{
+    box-shadow:
+    1px 1px #333333,
+    2px 2px #333333,
+    3px 3px #333333;
+    -webkit-transform: translateX(-3px);
+    transform: translateX(-3px);
+    cursor:pointer;
+}
+
+.card img{
+    height: 40%;
+    width: 50%;
+    margin: auto;
+}
+
+.card h3{
+    color: #333333;
+    font-weight: 800;
+}

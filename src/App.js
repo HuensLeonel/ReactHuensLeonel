@@ -1,6 +1,6 @@
 import ItemListContainer from "./Components/Containers/ItemListContainer";
 import Navbar from "./Components/Navbar/Navbar"
-import ItemCount from './Components/Containers/ItemCount'
+import ItemCount from './Components/Items/ItemCount'
 
 function App() {
 
