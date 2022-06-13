@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import CartWidget from './CartWidget';
 import './Navbar.css';
 
@@ -27,7 +28,7 @@ function Navbar() {
       <div className='contenedor-bar'>
         <div className="contenedor-bar-logo">
           <a href="#Accion">
-            <img src="https://www.venex.com.ar/fil/logo/header_logo_nuevo.png" alt="" />
+            <Link to={`/`}><img src="https://www.venex.com.ar/fil/logo/header_logo_nuevo.png" alt="" /></Link>
           </a>      
         </div>
         <div className="contenedor-bar-form">
@@ -47,14 +48,14 @@ function Navbar() {
       <div className="contenedor-menu">
         <div className="contenedor-menu-items">
           <ul>
-            <li><a href="#accion">Categorias | </a></li>
-            <li><a href="#accion">Pc de Escritorio </a></li>
-            <li><a href="#accion">Netbooks </a></li>
-            <li><a href="#accion">Placas de Video </a></li>
-            <li><a href="#accion">Monitores </a></li>
-            <li><a href="#accion">Micros</a></li>
-            <li><a href="#accion">Imperdibles</a></li>
-            <li><a href="#accion">|Arma tu PC|</a></li>
+            <li><Link to={``}>Categorias | </Link></li>
+            <li><Link to={`productos/categoria/pc`}>Pc de Escritorio </Link></li>
+            <li><Link to={`productos/categoria/notebook`}>Netbooks </Link></li>
+            <li><Link to={`productos/categoria/gpu`}>Placas de Video </Link></li>
+            <li><Link to={`productos/categoria/monitores`}>Monitores </Link></li>
+            <li><Link to={`productos/categoria/procesadores`}>Micros</Link></li>
+            <li><Link to={``}>Imperdibles</Link></li>
+            <li><Link to={``}>|Arma tu PC|</Link></li>
           </ul>
         </div>
       </div>
