@@ -25,7 +25,6 @@ function ItemListContainer({greeting}) {
     }, 2000);
   }
   },[id])
-  console.log(Objetos)
   return (
       <>
        <h1>{greeting}</h1>
