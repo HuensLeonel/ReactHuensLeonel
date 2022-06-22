@@ -41,7 +41,7 @@ function Navbar() {
             <a class="" href="#Accion">Bienvenida/o Usuario</a>
           </div>
           <div className="contenedor-bar-inicio-carro">
-            <CartWidget items={4}/>
+            <Link to={`/cart`}> <CartWidget items={4}/></Link>
           </div>
         </div>
       </div>

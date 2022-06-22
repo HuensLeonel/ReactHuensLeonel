@@ -8,7 +8,7 @@ export default function CartWidget({items}) {
   return (
     <>
       <ShoppingCartIcon/>
-      {getItemQty}
+      {getItemQty() !== 0 ? getItemQty() : 0 }
     </>
   )
 }
