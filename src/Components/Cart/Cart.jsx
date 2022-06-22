@@ -1,6 +1,7 @@
 import React from 'react'
 import { CartContext } from '../Context/CartContext';
 import { useContext } from 'react';
+import { Link } from 'react-router-dom';
 export default function Cart() {
     const {cart, getItemPrice,emptyCart ,deleteItem} = useContext(CartContext);
 
@@ -10,9 +11,9 @@ export default function Cart() {
     ? // true
     <>
     <div className="container mt-3">
-        <button type="button" class="btn btn-danger" onClick={emptyCart}>Vaciar</button>
+    <button type="button" class="btn btn-danger" onClick={emptyCart}>Vaciar</button>
         <div className="row mt-3">
-            <div className="col-lg-12 col-md-12 col-sm-12 col-12">
+            <div className="col-lg-8 col-md-8 col-sm-12 col-12">
                 <ul class="list-group list-group">
                     {cart.map((element,item)=> {
                         return (
@@ -21,28 +22,51 @@ export default function Cart() {
                                     <div class="fw-bold">
                                     <span class="badge bg-primary rounded-pill">{element.cantidad}</span>
                                     <img src={element.pictures[0].secure_url} alt="" style={{height: "10%" , width : "10%"}}/>
-                                    {element.title}
+                                    {element.title.substr(0,65) + '...'}
                                     </div>
                                 </div>
-                                <button type="button" class="btn btn-success">${element.price}</button>
-                                <button type="button" class="btn btn-danger" onClick={() => {deleteItem(element.id)}}>Eliminar</button>
+                                <button type="button" class="btn "><span style={{color: 'green'}}>${element.price}</span></button>
+                                <button type="button" class="btn " onClick={() => {deleteItem(element.id)}}><span style={{color: 'red'}}>Eliminar</span></button>
                             </li>
                         )
                     })}
                 </ul>
             </div>
+            <div className="col-lg-4 col-md-4 col-sm-12 col-12">
+                <div class="card" style={{width: "18rem"}}>
+                    <div class="card-body text-center">
+                        <h5 class="card-title">TOTAL</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">DE TU COMPRA</h6>
+                        <h2> ${getItemPrice().toFixed(2)}</h2>
+                        <div className=" mt-4">
+                            <button class="btn btn-success" type="button">FINALIZAR LA COMPRA</button>
+                        </div>
+                    </div>
+                </div>    
+            </div>
         </div>
-    </div>
-    <div class="d-grid gap-2 col-6 mx-auto mt-5">
-        <button class="btn btn-success" type="button">total: ${getItemPrice()}</button>
     </div>
     </>
     : // false 
     <>
-        <h1>Tu carrito esta vacio</h1>
+    <div className="container">
+        <div className="row">
+            <div className="col-md-4 col-lg-4 col-sm-4 col-4"></div>
+            <div className="col-md-4 col-lg-4 col-sm-4 col-4">
+                <h1>Tu carrito esta vacio</h1>           
+            </div>
+            <div className="col-md-4 col-lg-4 col-sm-4 col-4"></div>
+        </div>
+    </div>
     </> 
     }
-    
+    <div className="container">
+        <div className="row">
+            <div className="col">
+             <Link to={`/Home`}><button class="btn btn-success" type="button">Volver</button></Link>
+            </div>
+        </div>
+    </div>
     </>
   )
 }

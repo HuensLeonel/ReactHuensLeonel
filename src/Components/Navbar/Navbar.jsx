@@ -1,8 +1,12 @@
 import { Link } from 'react-router-dom';
 import CartWidget from '../Cart/CartWidget';
+import {CartContext} from '../Context/CartContext';
+import {useContext} from 'react';
 import './Navbar.css';
 
 function Navbar() {
+  const {getItemQty} = useContext(CartContext);
+
   return (
     <div className='contenedor'>
       <div className='contenedor-nav'>
@@ -41,7 +45,9 @@ function Navbar() {
             <a class="" href="#Accion">Bienvenida/o Usuario</a>
           </div>
           <div className="contenedor-bar-inicio-carro">
-            <Link to={`/cart`}> <CartWidget items={4}/></Link>
+            {getItemQty() === 0 ? <></> : 
+              <Link to={`/cart`}> <CartWidget items={4}/></Link>
+            }
           </div>
         </div>
       </div>
