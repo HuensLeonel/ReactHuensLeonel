@@ -22,16 +22,16 @@ export default function ItemDetail({objeto}) {
 }
   return (
     <>
-    <div className="container">
+    <div className="container mt-4">
       <div className="row">
         <div className="col-md-6">
-          <img src={objeto.pictures[0].secure_url} style={{height: "100%" , width : "100%"}} alt=""/>
+          <img src={objeto.imagen} style={{height: "80%" , width : "80%"}} alt=""/>
         </div>
         <div className="col-md-6">
-        <h3>{objeto.title}</h3>
-        <h3>${objeto.price}</h3>
+        <h3>{objeto.descripcion}</h3>
+        <h3>${objeto.precio}</h3>
         {estItemCount > 0 ? 
-        <ItemCount stock={objeto.available_quantity} inicio={0} onAdd={onAdd}/>
+        <ItemCount stock={objeto.stock} inicio={0} onAdd={onAdd}/>
         : <Link to="/cart">Ir al carrito</Link>}
         </div>
       </div>

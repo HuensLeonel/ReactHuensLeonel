@@ -1,34 +1,38 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import ItemList from '../Items/ItemList'
+import { getDocs, getFirestore , collection, query, where} from "firebase/firestore";
 
 function ItemListContainer({greeting}) {
   
   const {id} =  useParams();
   const [Objetos,setObjetos] = useState([]);
+  const db =  getFirestore();
 
   useEffect(() => {
-    //console.log('https://api.mercadolibre.com/sites/MLA/search?q='+id+'%27&limit=8')
-    if (id !== undefined){
-    setTimeout(() => {
-        fetch('https://api.mercadolibre.com/sites/MLA/search?q='+id+'%27&limit=8')
-        .then(res => res.json())
-        .then(res => (setObjetos(res.results)))
-        .catch(res => console.error("Error",res.error))
-      }, 1000);
+    let coleccion;
+    if(id !== undefined){
+      coleccion= query(collection(db,'productos'), where("categoria", "==", id))
     }else{
-    setTimeout(() => {
-      fetch('https://api.mercadolibre.com/sites/MLA/search?q=computacion%27&limit=8')
-      .then(res => res.json())
-      .then(res => (setObjetos(res.results)))
-      .catch(res => console.error("Error",res.error))
-    }, 2000);
-  }
+      coleccion = collection(db,'productos')
+    }
+    getDocs(coleccion)
+      .then((res)=>{
+        //console.log(res.docs[0].data());
+        let arrayAux = []
+        for (let index = 0; index < res.size; index++) {
+          arrayAux.push({id: res.docs[index].id , ...res.docs[index].data() })
+        }
+        setObjetos(arrayAux)
+      })
   },[id])
   return (
       <>
-       <h1>{greeting}</h1>
+      {Object.keys(Objetos).length !== 0 ?
        <ItemList objetos={Objetos}></ItemList>    
+       :
+       <h1>Cargando...</h1>
+      }
       </>
   )
 }

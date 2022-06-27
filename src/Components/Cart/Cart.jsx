@@ -2,6 +2,7 @@ import React from 'react'
 import { CartContext } from '../Context/CartContext';
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { DataObjectOutlined } from '@mui/icons-material';
 export default function Cart() {
     const {cart, getItemPrice,emptyCart ,deleteItem} = useContext(CartContext);
 
@@ -21,11 +22,11 @@ export default function Cart() {
                                 <div key={item} class="ms-2 me-auto">
                                     <div class="fw-bold">
                                     <span class="badge bg-primary rounded-pill">{element.cantidad}</span>
-                                    <img src={element.pictures[0].secure_url} alt="" style={{height: "10%" , width : "10%"}}/>
-                                    {element.title.substr(0,65) + '...'}
+                                    <img alt="" src={element.imagen} style={{height: "10%" , width : "10%"}}/>
+                                    {element.descripcion.substr(0,65) + '...'}
                                     </div>
                                 </div>
-                                <button type="button" class="btn "><span style={{color: 'green'}}>${element.price}</span></button>
+                                <button type="button" class="btn "><span style={{color: 'green'}}>${element.precio}</span></button>
                                 <button type="button" class="btn " onClick={() => {deleteItem(element.id)}}><span style={{color: 'red'}}>Eliminar</span></button>
                             </li>
                         )

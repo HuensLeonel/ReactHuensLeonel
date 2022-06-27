@@ -4,8 +4,21 @@ import ItemListContainer from "./Components/Containers/ItemListContainer";
 import ItemDetailContainer from "./Components/Containers/ItemDetailContainer";
 import MyProvider from "./Components/Context/CartContext";
 import Cart from "./Components/Cart/Cart";
+import { initializeApp } from "firebase/app";
+
 
 function App() {
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyAhVmQjmWT-GSin872Bk8s-IavnEoydvqM",
+    authDomain: "venexcoderhouse.firebaseapp.com",
+    projectId: "venexcoderhouse",
+    storageBucket: "venexcoderhouse.appspot.com",
+    messagingSenderId: "459296664026",
+    appId: "1:459296664026:web:2197008f86ecd74a5338e3"
+  };
+  
+  initializeApp(firebaseConfig);
   
   return(
     <>

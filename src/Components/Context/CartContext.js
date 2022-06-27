@@ -54,7 +54,7 @@ export default function MyProvider({children}){
 
   //Obtener precio total de todos los objetos
   const getItemPrice = () => {
-    return cart.reduce((total,item) => total += item.price * item.cantidad,0)
+    return cart.reduce((total,item) => total += item.precio * item.cantidad,0)
   }
 
   return (

@@ -2,24 +2,28 @@ import React from 'react'
 import ItemDetail from '../Items/ItemDetail'
 import {useEffect, useState} from 'react';
 import {useParams} from 'react-router-dom';
+import {  getFirestore , doc , getDoc} from "firebase/firestore";
 
 export default function ItemDetailContainer() {
 
     const {id} =  useParams();
     const [Objeto,setObjeto] = useState({});
-   
+    const db =  getFirestore();
+
     useEffect(() => {
-      setTimeout(() => {
-          fetch('https://api.mercadolibre.com/items?ids='+id)
-          .then(res => res.json())
-          .then(res => (setObjeto(res[0].body)))
-          .catch(res => console.error("Error",res.error))
-        }, 1000);
+      const obj = doc(db,'productos',id)
+      getDoc(obj)
+      .then((res) =>{
+        console.log(res.id )
+          setObjeto({id: res.id ,...res.data() })
+      })
     },[id])
     
   return (
     <>
-      {Object.keys(Objeto).length > 0 ? <ItemDetail objeto={Objeto} /> : 
+      {Object.keys(Objeto).length > 0 ?
+       <ItemDetail objeto={Objeto} /> 
+       : 
       <div class="d-flex justify-content-center">
         <div class="spinner-grow text-primary" role="status">
           <span class="visually-hidden">Loading...</span>
