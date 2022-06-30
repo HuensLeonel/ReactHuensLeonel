@@ -2,7 +2,7 @@ import * as React from 'react';
 import './Item.css'
 import { Link } from 'react-router-dom';
 
-export default function Item({key,objeto}) {
+export default function Item({objeto}) {
   return (
     <>
     <div className="col-sm-3 col-md-4 col-lg-3">

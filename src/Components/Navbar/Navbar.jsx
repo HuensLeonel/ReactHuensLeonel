@@ -37,12 +37,12 @@ function Navbar() {
         </div>
         <div className="contenedor-bar-form">
           <form action="">
-            <input title="" id="" placeholder='Eso que querés.. buscalo acá' autocomplete="off" class="form-control" data-original-title=""/>
+            <input title="" id="" placeholder='Eso que querés.. buscalo acá' className="form-control" />
           </form>
         </div>
         <div className="contenedor-bar-inicio">
           <div className="contenedor-bar-inicio-usu">
-            <a class="" href="#Accion">Bienvenida/o Usuario</a>
+            <a className="" href="#Accion">Bienvenida/o Usuario</a>
           </div>
           <div className="contenedor-bar-inicio-carro">
             {getItemQty() === 0 ? <></> : 

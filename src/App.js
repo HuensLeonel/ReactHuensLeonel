@@ -5,6 +5,7 @@ import ItemDetailContainer from "./Components/Containers/ItemDetailContainer";
 import MyProvider from "./Components/Context/CartContext";
 import Cart from "./Components/Cart/Cart";
 import { initializeApp } from "firebase/app";
+import Checkout from "./Components/Cart/Checkout";
 
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
             <Route path='/productos/categoria/:id' element={ <ItemListContainer greeting={'Hola Comision 31205'}/>}></Route>
             <Route path='/producto/:id' element={<ItemDetailContainer/>}></Route>
             <Route path='/cart' element={<Cart/>}></Route>
+            <Route path='/checkout' element={<Checkout/>}></Route>
           </Routes>
     </MyProvider>
     </>
