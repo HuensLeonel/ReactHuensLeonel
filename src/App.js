@@ -6,6 +6,7 @@ import MyProvider from "./Components/Context/CartContext";
 import Cart from "./Components/Cart/Cart";
 import { initializeApp } from "firebase/app";
 import Checkout from "./Components/Cart/Checkout";
+import React from "react";
 
 
 function App() {

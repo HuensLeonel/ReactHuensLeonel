@@ -19,6 +19,10 @@ export default function Checkout() {
 
 
     const addPedido = ()=>{
+        if(name === '' || apellido === '' || mail ===''){
+            alert('Debe ingresar nombre, apellido y mail')
+        }else{
+            
         const compra = {
             buyer: {name,apellido,mail},
             items: cart,
@@ -35,12 +39,14 @@ export default function Checkout() {
             }, 1000);
            
         })
+        
+        }
 
     }
 
 return (
     <>
-    <div>
+    <div className='container'>
         <div className="mb-3">
             <label className="form-label">Nombre</label>
             <input onChange={(e) => setName(e.target.value)} type="text" className="form-control"></input>
@@ -51,9 +57,9 @@ return (
         </div>
         <div className="mb-3">
             <label className="form-label">Mail</label>
-            <input onChange={(e) => setMail(e.target.value)} type="text" className="form-control" ></input>
+            <input onChange={(e) => setMail(e.target.value)} type="mail" className="form-control" ></input>
         </div>
-        <button onClick={() => {addPedido()}} className="btn btn-primary">Submit</button>
+        <button onClick={() => {addPedido()}} className="btn btn-primary">Terminar</button>
     </div>
     </>
   )

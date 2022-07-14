@@ -36,7 +36,6 @@ export default function ItemDetail({objeto}) {
         </div>
       </div>
     </div>
-    
     </>
   )
 }

@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import CartWidget from '../Cart/CartWidget';
 import {CartContext} from '../Context/CartContext';
-import {useContext} from 'react';
+import React , {useContext} from 'react';
 import './Navbar.css';
 
 function Navbar() {
@@ -54,14 +54,12 @@ function Navbar() {
       <div className="contenedor-menu">
         <div className="contenedor-menu-items">
           <ul>
-            <li><Link to={``}>Categorias | </Link></li>
+            <li>Categorias |</li>
             <li><Link to={`productos/categoria/pc`}>Pc de Escritorio </Link></li>
             <li><Link to={`productos/categoria/notebook`}>Netbooks </Link></li>
             <li><Link to={`productos/categoria/gpu`}>Placas de Video </Link></li>
             <li><Link to={`productos/categoria/monitores`}>Monitores </Link></li>
             <li><Link to={`productos/categoria/procesadores`}>Micros</Link></li>
-            <li><Link to={``}>Imperdibles</Link></li>
-            <li><Link to={``}>|Arma tu PC|</Link></li>
           </ul>
         </div>
       </div>
